@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<head>
+    <title>Jakub Slabý - Seminární práce</title>
+    <style>
+        :root {
+            font-family: sans-serif;
+            /* font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+            font-weight: normal; */
+            /* font-size: 2vw; */
+            font-size: 12pt;
+        }
+        body {
+            margin: 0 0 5vw;
+            overflow-x: hidden;
+        }
+        section {
+            width: min(100vw, 600pt);
+            height: 100vh;
+            /* margin: 5vw max(min(50vw - 250pt), 5vw); */
+            margin: 0 auto;
+            padding: 5vw;
+            box-sizing: border-box;
+            counter-increment: page;
+        }
+        section:first-child {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-items: stretch;
+        }
+        section:first-child > h1 {
+            margin-top: 30%;
+            font-size: 5em;
+        }
+        section:first-child > footer {
+            padding: 5vw;
+            margin-top: auto;
+            z-index: 1;
+            background-color: #fff;
+        }
+        li > [page] {
+            float: right;
+        }
+        section[page-count-start] {
+            counter-reset: page;
+        }
+        section:not([no-page-count]):after {
+            content: counter(page);
+            display: block;
+            text-align: center;
+            position: sticky;
+            top: 100%;
+        }
+        img {
+            display: block;
+            max-width: 75vw;
+            max-height: 50vw;
+            margin: 10pt auto;
+        }
+        h2, h3 {
+            margin-top: 50pt;
+        }
+        a {
+            color: currentColor;
+        }
+        section[hidden-link-lines] a:not(:hover) {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <section no-page-count>
+        <!-- <blockquote>
+            <p>doba psaní: 9 <em> 20min<br>doba strávená formátováním: 4 </em> 20min</p>
+        </blockquote> -->
+        <h1>Kreatin</h1>
+        <h2>seminární práce z chemie</h2>
+        <footer>
+            <span>gymnázium Václava Hraběte Hořovice</span>
+            <span style="float: right">Jakub Slabý, 5.A, 2023/2024</span>
+        </footer>
+    </section>
+    <section no-page-count hidden-link-lines>
+        <h2 id="obsah">Obsah</h2>
+        <ol>
+            <li><a href="#úvod">Úvod</a><span page>1</span></li>
+            <li><a href="#co-to-je">Co to je</a><span page>2</span></li>
+            <li><a href="#kreatin-jako-doplněk-stravy">Kreatin jako doplněk stravy</a><span page>2</span></li>
+            <ol>
+                <li><a href="#kreatin-monohydrát">Kreatin monohydrát</a><span page>3</span></li>
+                <li><a href="#kreatin-hcl">Kreatin hcl</a></li>
+            </ol>
+            </li>
+            <li><a href="#kreatin-pro-ženy">Kreatin pro ženy</a></li>
+            <ol>
+                <li><a href="#neurologie">Neurologie</a><span page>4</span></li>
+                <li><a href="#suplementace-v-konkr-tn-ch-obdob-ch">Suplementace v konkrétních obdobích</a></li>
+            </ol>
+            <li><a href="#vedlej-inky">Vedlejší účinky</a><span page>5</span></li>
+            <li><a href="#z-v-r">Závěr</a><span page>6</span></li>
+            <li><a href="#zdroje">Zdroje</a><span page>7</span></li>
+            <li><a href="#licence">Licence</a></li>
+    </section>
+    <section page-count-start>
+        <h2 id="-vod">Úvod</h2>
+        <p>Téma jsem si vybral kvůli své nedávné pozitivní zkušenosti s kreatinem. Nemyslím si, že by se o kreatinu nemluvilo, ale pořád o něm většina lidí neví. Myslím si, že je to škoda. Budu zde tvrdit, že má nemálo pozitivních účinků jak pro sportovce a kulturisty, tak pro běžné lidi.</p>
+        <p>Práci dodávám jako HTML stránku, protože odkaz se sdílí jednodušeji, než pdf soubor, a chci se tím naučit pár dovedností. Zároveň ji zveřejňuji na adrese <a href="https://github.com/jakubslaby09/seminarka-2023">https://github.com/jakubslaby09/seminarka-2023</a> pro zmíněné jednodušší sdílení.</p>
+    </section>
+    <section>
+    <h2 id="co-to-je">Co to je</h2>
+        <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Creatine.png/220px-Creatine.png" alt="Stavba molekuly"></p>
+        <p>Kreatin je organická sloučenina, která se vyskytuje především ve svalech.[1]
+        Mladý muž spotřebuje zhruba 2g kreatinu denně, ženy a starší lidé méně. Lidské tělo si kreatin dokáže samo vytvořit, avšak nad 1 gram denně se těžko dostanete. Zbytek je tedy přijímán ze stravy.[2]
+        Kreatin zvyšuje množství energie, kterou mají buňky při krátké zátěži k dispozici[3],
+        což umožňuje svalům vydat větší výkon.</p>
+        <h2 id="kreatin-jako-dopln-k-stravy">Kreatin jako doplněk stravy</h2>
+        <p>Jednoduchou a účinnou cestou, jak si množství kreatinu v těle navýšit, je suplementace,
+        která prokazatelně zvyšuje výkon při cvičení.[4]</p>
+        <img src="https://hips.hearstapps.com/hmg-prod/images/creatine-side-effects-1658172630.jpg?crop=0.573xw:1.00xh;0.162xw,0&amp;resize=980:*" alt="Naběračka s kreatinem">
+    </section>
+    <section>
+        <p>Prodává se jako bílý prášek, který si můžete zamíchat do pití, nebo v kapslích, které polykáte.
+        Existuje také několik různých druhů, ve kterých je kreatin poskytován.
+        Nejčastěji se můžeme setkat s těmito:</p>
+        <h3 id="kreatin-monohydr-t">Kreatin monohydrát</h3>
+        <p>Je nejprodávánější formou kreatinu a s jako jedinou z nich mám zkušenost.</p>
+        <p>Běžně se prodává za příznivou cenu.[6] Další velkou výhodou je jistota ohledně jeho účinků na zdraví, kvůli tomu, jak je častý.
+        Jako velké negativum bych uvedl, že není tak praktický, jako ty ostatí.
+        Špatně se rozpouští, musíte si ho tak důkladně míchat, nebo si ho připravovat v horké vodě.
+        Také špatně odolává žaludečním kyselinám, na což byste měli brát ohled, pokud nechcete, aby
+        vám většina dávky nepůsobila.</p>
+        <p>Zejména jídla a doplňky stravy bohaté na bílkoviny vám zakyselí žaludek, takže míchat si např.
+        syrovátkový protein s kreatinem je chyba.
+        Pokud se však spletete a dáte si kreatin ve stejnou dobu, jako třeba libový hovězí steak, zdraví si tím neohrozíte.</p>
+        <p>Kvůli nižší odolnosti vůči kyselému prostředí žaludku je také pro dosažení stejného účinku potřeba vyšších dávek.</p>
+        <h3 id="kreatin-hcl">Kreatin HCL</h3>
+        <p>Přináší řešení problémů spojených s <a href="#kreatin-monohydrát">monohydrátem</a>.
+        Jeho velikou výhodou je vysoká odolnost vůči žaludečním kyselinám a s tím spojená vyšší
+        účinnost.
+        Vyniká svou rozpustností, která je alespoň třicetkrát větší, než u monohydrátu.[7]</p>
+        <h2 id="kreatin-pro-eny">Kreatin pro ženy</h2>
+        <p>Výzkum kreatinu se bohužel soustředí převážně na muže a v oblasti
+        marketingu platí totéž.
+        Ženy mají zhruba čtvrtinovou zásobu kreatinu pocházejícího z ledvin,
+        jeho suplementace tak zvlášť u žen přináší mnoho výhod.</p>
+    </section>
+    <section>
+        <h3 id="neurologie">Neurologie</h3>
+        <p>Málo zmiňovaným pozitivním účinkem kreatinu je jeho vliv na nervové buňky, které se, jako
+        ty svalové, značně podílejí na spotřebě energie v těle. Podobně jako ty svalové jsou často vystaveny krátkodobou zátěží, například při soustředění, či stresu.
+        A právě u žen má suplementace kreatinem významný pozitivní vliv jak na soustředění a přemýšlení,
+        tak na náladu. Snižuje vyčerpání zajištěním dostatku ATP v neuronech po delší dobu a
+        výrazně snižuje rizika deprese.</p>
+        <h3 id="suplementace-v-konkr-tn-ch-obdob-ch">Suplementace v konkrétních obdobích</h3>
+        <h4 id="menstrua-n-cyklus">Menstruační cyklus</h4>
+        <p><img src="https://www.ncbi.nlm.nih.gov/pmc/articles/instance/7998865/bin/nutrients-13-00877-g001.jpg" alt="">
+        S menstruací je kreatinkináza, proces vytváření kreatinfosfátu z kreatinu, méně aktivní. Suplementace kreatinu je
+        tedy efektivnější během ovulace a luteální fáze cyklu.[8]</p>
+    </section>
+    <section>
+        <h4 id="t-hotenstv-">Těhotenství</h4>
+        <p>Během ranného těhotenství zvyšuje placenta energetický výdej a zřejmě dochází ke snížení zásob kreatinu v těle.
+        Zároveň byla zjištěna souvislost mezi výkyvy a nedostatkem zásob kreatinu během těhotenství a nižší porodní hmotností.
+        Podle výzkumu na zvířatech snižuje suplementace kreatinu riziko požkození mozku nedostatkem kyslíku během porodu.[8]</p>
+        <h4 id="menopauza">Menopauza</h4>
+        <p>Během menopauzy lze suplementací kreatinu zamezit úbytku svalové hmoty a řídnutí kostí.
+        Posilování tyto pozitivní vlivy suplementace významě zvyšuje.[8]</p>
+        <h2 id="vedlej-inky">Vedlejší účinky</h2>
+        <p>Suplementace kreatinu se sebou nenese téměř žádné negativní vedlejší účinky.[8]
+        Kreatinin, odpadní látka spojená s metabolismem kreatinu, je sice spojená s
+        nemocemi ledvin,
+        užívání doplňků kreatinu však nemá na zdraví ledvin negativní vliv, stejně tak, jako u jater.[8]</p>
+        <p>Možným rizikem však může být zvýšená spotřeba vody, která se díky kreatinu ukládá do svalů. Suplementace tak může
+        zhoršit problémy spojené s nedostatečným pitným režmem.</p>
+        <p>S ukládáním vody a se zvýšenou efektivitou silových tréninků přichází ještě nárůst tělesné hmotnosti, který může být
+        pro některé potenciální uživatele nežádoucí.</p>
+    </section>
+    <section>
+        <h2 id="z-v-r">Závěr</h2>
+        <p>Kreatin je důležitou součástí našeho metabolismu. Je dostupný jako doplněk stravy a jeho suplementace přináší mnoho výhod.
+        Kreatin monohydrát je bezpečný a bez významných vedlejších účinků, pokud nepočítáme zvýšení tělesné hmotnosti vlivem
+        zvýšení obsahu vody ve svalech. Je však důležité si během užívání udržovat zdravý pitný režim. Ostatní formy se zdají být také
+        bezpečnými, je však potřeba více výzkumu. Rozhodováním o době suplementace můžeme její efektivitu zvýšit. Užití je vhodné pro
+        obě pohlaví, přestože tomu mediální prostor často nenasvědčuje.</p>
+    </section>
+    <section>
+        <h2 id="zdroje">Zdroje</h2>
+        <ol>
+        <li>Wikipedie: Otevřená encyklopedie: Kreatin [online]. c2023 [citováno 2. 01. 2024]. Dostupný z WWW: <a href="https://cs.wikipedia.org/w/index.php?title=Kreatin&amp;oldid=23459250">https://cs.wikipedia.org/w/index.php?title=Kreatin&amp;oldid=23459250</a></li>
+        <li>Brosnan, J.T., da Silva, R.P. &amp; Brosnan, M.E. The metabolic burden of creatine synthesis. Amino Acids 40, 1325–1331 (2011). <a href="https://doi.org/10.1007/s00726-011-0853-y">https://doi.org/10.1007/s00726-011-0853-y</a></li>
+        <li>Schlattner U, Tokarska-Schlattner M, Wallimann T. Mitochondrial creatine kinase in human health and disease. Biochim Biophys Acta. 2006 Feb;1762(2):164-80. doi: 10.1016/j.bbadis.2005.09.004. Epub 2005 Sep 27. PMID: 16236486. <a href="https://doi.org/10.1016/j.bbadis.2005.09.004">https://doi.org/10.1016/j.bbadis.2005.09.004</a></li>
+        <li>Lanhers C, Pereira B, Naughton G, Trousselard M, Lesage FX, Dutheil F. Creatine Supplementation and Upper Limb Strength Performance: A Systematic Review and Meta-Analysis. Sports Med. 2017 Jan;47(1):163-173. doi: 10.1007/s40279-016-0571-4. PMID: 27328852. <a href="https://doi.org/10.1007/s40279-016-0571-4">https://doi.org/10.1007/s40279-016-0571-4</a></li>
+        <li>Fernández-Landa J, Santibañez-Gutierrez A, Todorovic N, Stajer V, Ostojic SM. Effects of Creatine Monohydrate on Endurance Performance in a Trained Population: A Systematic Review and Meta-analysis. Sports Med. 2023 May;53(5):1017-1027. doi: 10.1007/s40279-023-01823-2. Epub 2023 Mar 6. PMID: 36877404. <a href="https://doi.org/10.1007/s40279-023-01823-2">https://doi.org/10.1007/s40279-023-01823-2</a></li>
+        <li>Kreatin monohydrát na prodej v internetovém obchodě 4Fitness. 30.3.2023 <a href="https://web.archive.org/web/20230330212736/https://4fitness.cz/kreatin-1kg/">https://web.archive.org/web/20230330212736/https://4fitness.cz/kreatin-1kg/</a></li>
+        <li>Gufford BT, Sriraghavan K, Miller NJ, Miller DW, Gu X, Vennerstrom JL, Robinson DH. Physicochemical characterization of creatine N-methylguanidinium salts. J Diet Suppl. 2010 Sep;7(3):240-52. doi: 10.3109/19390211.2010.491507. PMID: 22432515. <a href="https://doi.org/10.3109/19390211.2010.491507">https://doi.org/10.3109/19390211.2010.491507</a></li>
+        <li>Smith-Ryan AE, Cabre HE, Eckerson JM, Candow DG. Creatine Supplementation in Women&#39;s Health: A Lifespan Perspective. Nutrients. 2021 Mar 8;13(3):877. doi: 10.3390/nu13030877. PMID: 33800439; PMCID: PMC7998865. <a href="https://doi.org/10.3390/nu13030877">https://doi.org/10.3390/nu13030877</a></li>
+        <li>Poortmans JR, Francaux M. Adverse effects of creatine supplementation: fact or fiction? Sports Med. 2000 Sep;30(3):155-70. doi: 10.2165/00007256-200030030-00002. PMID: 10999421. <a href="https://doi.org/10.2165/00007256-200030030-00002">https://doi.org/10.2165/00007256-200030030-00002</a></li>
+        </ol>
+        <h1 id="licence">Licence</h1>
+        <p>Na text práce se vztahuje licence <a href="https://creativecommons.org/licenses/by/4.0/legalcode.cs">Creative Commons Attribution 4.0 International</a>,
+        na kód stránky, tzn. HTML tagy a kaskádové styly, se vztahuje licence <a href="https://opensource.org/license/mit/">MIT Licence</a>.</p>
+    </section>
+</body>
