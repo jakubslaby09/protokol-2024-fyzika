@@ -14,8 +14,9 @@
             overflow-x: hidden;
         }
         section {
-            width: min(100vw, 600pt);
-            height: 100vh;
+            width: min(100vw, 450pt);
+            /* height: 100vw; */
+            aspect-ratio: 1.41 / 1;
             /* margin: 5vw max(min(50vw - 250pt), 5vw); */
             margin: 0 auto;
             padding: 5vw;
@@ -53,7 +54,7 @@
         }
         img {
             display: block;
-            max-width: 75vw;
+            width: min(75vw, 600pt);
             max-height: 50vw;
             margin: 10pt auto;
         }
