@@ -4,14 +4,29 @@
     <style>
         :root {
             font-family: sans-serif;
-            /* font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
-            font-weight: normal; */
-            /* font-size: 2vw; */
             font-size: 12pt;
+            --background: hsl(0, 0%, 99%);
+            --surface: #fff;
+            --on-surface: #000;
+            --shadow: 0 1px 2px #8884;
+            --image-filter: none;
+            --invertable-image-filter: none;
+            color: var(--on-surface);
+        }
+        @media not print {
+            :root:is([dark="true"], :has(body > input[type="checkbox"][light-switch]:checked)) {
+                color-scheme: dark;
+                --background: #000;
+                --surface: #111;
+                --on-surface: #eeddd0;
+                --shadow: none;
+                --image-filter: brightness(0.7);
+                --invertable-image-filter: invert(1) hue-rotate(180deg) contrast(calc(14/16));
+            }
         }
         body {
             margin: 0 0 5vw;
-            background: hsl(0, 0%, 99%);
+            background: var(--background);
         }
         section {
             width: min(100vw, 500pt);
@@ -20,20 +35,20 @@
             padding: 25pt;
             box-sizing: border-box;
             counter-increment: page;
-            background: #fff;
-            box-shadow: 0 1px 2px #8884;
+            background: var(--surface);
+            box-shadow: var(--shadow);
         }
-        section:first-child {
+        section:first-of-type {
             display: flex;
             flex-direction: column;
             text-align: center;
             justify-items: stretch;
         }
-        section:first-child > h1 {
+        section:first-of-type > h1 {
             margin-top: 30%;
             font-size: 5em;
         }
-        section:first-child > footer {
+        section:first-of-type > footer {
             margin-top: auto;
         }
         li > [page] {
@@ -53,6 +68,10 @@
             display: block;
             margin: 10pt auto;
             max-height: 250pt;
+            filter: var(--image-filter);
+        }
+        img[invertable] {
+            filter: var(--invertable-image-filter);
         }
         section > :is(h2, h3):not(:first-child) {
             margin-top: 50pt;
@@ -63,16 +82,62 @@
         section[hidden-link-lines] a:not(:hover) {
             text-decoration: none;
         }
+        body > input[type="checkbox"][light-switch] {
+            display: block;
+            margin: 20pt auto 0;
+            cursor: pointer;
+            width: 80pt;
+            height: 3rem;
+            appearance: none;
+        }
+        body > input[type="checkbox"][light-switch]::after {
+            content: "Tmavý režim";
+            display: block;
+            width: 80pt;
+            padding: 1rem 0;
+            border-radius: 1.5rem;
+            text-align: center;
+            color: var(--on-surface);
+            background: var(--surface);
+            box-shadow: var(--shadow);
+        }
+        body > input[type="checkbox"][light-switch]:checked:after {
+            content: "Světlý režim";
+        }
         @media print {
             section {
                 max-width: 100vw;
                 min-height: 100vh;
                 margin: 0 auto;
             }
+            body > input[type="checkbox"][light-switch] {
+                display: none;
+            }
         }
     </style>
+    <meta name="theme-color" content="#fff" />
 </head>
 <body>
+    <input type="checkbox" light-switch>
+    <script defer>
+        // @ts-check
+        /** @type {HTMLInputElement | null} */
+        const input = document.querySelector('input[light-switch]');
+        if(input != null) {
+            if(["true", "false"].includes(localStorage.getItem("dark") ?? "")) {
+                // @ts-ignore
+                input.checked = localStorage.getItem("dark") == "true";
+                console.log(input.checked);
+            }
+            updateDark();
+            input.addEventListener("change", updateDark);
+            function updateDark() {
+                localStorage.setItem("dark", (input?.checked ?? false).toString());
+                document.querySelector('meta[name="theme-color"]')?.setAttribute('content', input?.checked ? '#000' : '#fff');
+                document.body.parentElement?.setAttribute("dark", (input?.checked ?? false).toString());
+            }
+        }
+    </script>
     <section no-page-count>
         <!-- <blockquote>
             <p>doba psaní: 9 <em> 20min<br>doba strávená formátováním: 4 </em> 20min</p>
@@ -157,7 +222,7 @@
         výrazně snižuje rizika deprese.</p>
         <h3 id="suplementace-v-konkr-tn-ch-obdob-ch">Suplementace v konkrétních obdobích</h3>
         <h4 id="menstrua-n-cyklus">Menstruační cyklus</h4>
-        <p><img src="https://www.ncbi.nlm.nih.gov/pmc/articles/instance/7998865/bin/nutrients-13-00877-g001.jpg" alt="">
+        <p><img invertable src="https://www.ncbi.nlm.nih.gov/pmc/articles/instance/7998865/bin/nutrients-13-00877-g001.jpg" alt="">
         S menstruací je kreatinkináza, proces vytváření kreatinfosfátu z kreatinu, méně aktivní. Suplementace kreatinu je
         tedy efektivnější během ovulace a luteální fáze cyklu.[8]</p>
     </section>
