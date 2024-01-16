@@ -34,10 +34,7 @@
             font-size: 5em;
         }
         section:first-child > footer {
-            padding: 5vw;
             margin-top: auto;
-            z-index: 1;
-            background-color: #fff;
         }
         li > [page] {
             float: right;
@@ -57,7 +54,7 @@
             margin: 10pt auto;
             max-height: 250pt;
         }
-        h2, h3 {
+        section > :is(h2, h3):not(:first-child) {
             margin-top: 50pt;
         }
         a {
